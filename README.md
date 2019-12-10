@@ -22,7 +22,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ rails g wfl_simple_activity:install
+    $ rake db:migrate
 
 ## Development
 
