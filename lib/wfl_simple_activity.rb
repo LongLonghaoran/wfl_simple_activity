@@ -4,3 +4,5 @@ module WflSimpleActivity
   class Error < StandardError; end
   # Your code goes here...
 end
+
+require 'wfl_simple_activity/common_activity.rb'
