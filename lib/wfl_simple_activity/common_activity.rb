@@ -1,7 +1,7 @@
 module CommonActivity
   extend ActiveSupport::Concern
   included do |base|
-    include PublicActivity::Model
+    include ::PublicActivity::Model
     tracked(
       owner: proc { |controller, model| controller&.current_user }, 
       model_changes: proc {|controller, model|  model.changes},
