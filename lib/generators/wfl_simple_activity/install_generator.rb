@@ -22,6 +22,10 @@ module WflSimpleActivity
       def copy_activity_model
         copy_file "common_activity.rb", "app/models/common_activity.rb"
       end
+
+      def copy_activity_model
+        copy_file "activity.rb", "config/initializers/activity.rb"
+      end
     end
   end
 
