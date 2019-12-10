@@ -19,7 +19,7 @@ module WflSimpleActivity
         migration_template "create_activities.rb", "db/migrate/create_activities.rb"
       end
 
-      def copy_activity_model
+      def copy_common_activity
         copy_file "common_activity.rb", "app/models/common_activity.rb"
       end
 
