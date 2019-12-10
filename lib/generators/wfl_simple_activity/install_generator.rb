@@ -2,7 +2,7 @@ require 'rails/generators/base'
 require 'rails/generators/migration'
 require 'rails/generators/active_record'
 
-module SimpleActivity
+module WflSimpleActivity
   module Generators
     class InstallGenerator < Rails::Generators::Base
       include Rails::Generators::Migration
