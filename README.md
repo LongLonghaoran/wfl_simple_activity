@@ -1,10 +1,8 @@
 # WflSimpleActivity
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/wfl_simple_activity`. To experiment with that code, run `bin/console` for an interactive prompt.
+一个用以记录用户数据操作日志的Gem
 
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
+## 安装
 
 Add this line to your application's Gemfile:
 
@@ -20,16 +18,19 @@ Or install it yourself as:
 
     $ gem install wfl_simple_activity
 
-## Usage
+## 用法
 
     $ rails g wfl_simple_activity:install
     $ rake db:migrate
 
-## Development
+## 开发
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+#### 单表记录
+* 执行上面两步之后,在需要记录数据变更的Model中 `include CommonActivity` ,这样便会记录该Model的数据变更日志,在
+    数据发生变化,将会创建 `activity`, 在项目中可以通过 `model_name.activities` 或者 `PublicActivity::Activity.where(condition)`来获取活动日志
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+#### 关联表记录 或者 其余特殊情况
+* 如果需要在关联模型数据发生变更时记录当前模型的`activity`,需要自行在关联的模型中通过`model_name.create_activity key: 'article.commented_on', owner: current_user, recipient: recipientm`来创建`activity`,create_activity方法参数可参考 [PublicActivity::Common#create_activity](https://rubydoc.info/gems/public_activity/PublicActivity/Common:create_activity)
 
 ## Contributing
 
