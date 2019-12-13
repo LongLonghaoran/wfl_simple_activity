@@ -20,7 +20,7 @@ module WflSimpleActivity
       end
 
       def copy_common_activity
-        copy_file "common_activity.rb", "app/models/common_activity.rb"
+        copy_file "common_activity.rb", "app/models/concerns/common_activity.rb"
       end
 
       def copy_activity_model
