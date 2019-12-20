@@ -1,4 +1,4 @@
-module CommonActivity
+module WflActivity
   extend ActiveSupport::Concern
   included do |base|
     include PublicActivity::Model
@@ -11,7 +11,8 @@ module CommonActivity
       }
     )
 
-    has_many :activities, as: :trackable, class_name: 'PublicActivity::Activity', dependent: :destroy
+    # 如果不需要删除记录
+    # has_many :activities, as: :trackable, class_name: 'PublicActivity::Activity', dependent: :destroy
 
     after_rollback proc {
       self.create_activity key: "#{self.class.name.underscore}.failed", owner: User.find(Thread.current[:user_id]), recipient: self
