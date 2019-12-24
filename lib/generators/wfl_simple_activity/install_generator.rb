@@ -16,7 +16,7 @@ module WflSimpleActivity
       end
 
       def create_migration_file
-        migration_template "create_activities.rb", "db/migrate/create_activities.rb"
+        migration_template "create_wfl_activities.rb", "db/migrate/create_wfl_activities.rb"
       end
 
       def copy_common_activity

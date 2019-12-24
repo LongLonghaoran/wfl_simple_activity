@@ -1,5 +1,5 @@
 # Migration responsible for creating a table with activities
-class CreateActivities < ActiveRecord::Migration
+class CreateWflActivities < ActiveRecord::Migration
   # Create table
   def self.up
     create_table :wfl_activities do |t|
