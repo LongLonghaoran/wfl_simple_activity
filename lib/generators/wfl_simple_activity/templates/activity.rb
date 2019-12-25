@@ -1,5 +1,6 @@
-require "public_activity/orm/active_record/activity.rb"
-PublicActivity::ORM::ActiveRecord::Activity.table_name = "wfl_activities"
+PublicActivity::Config.set do
+  table_name "wfl_activities"
+end
 module PublicActivity
   class Activity
     serialize :parameters, Hash
