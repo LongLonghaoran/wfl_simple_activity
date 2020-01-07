@@ -11,6 +11,7 @@ class CreateWflActivities < ActiveRecord::Migration
       t.text :model_changes
       t.integer :school_id
       t.string :description
+      t.integer :status
       t.timestamps
     end
 

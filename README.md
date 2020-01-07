@@ -37,6 +37,12 @@ Or install it yourself as:
 
 * 生成的migration文件中需自行migration版本指定对应的版本
 
+* 例如: 
+    ```ruby
+        class CreateWflActivities < ActiveRecord::Migration[5.1]
+        end
+    ```
+
 * 如果需要记录current_user 或者 调用其他在controller中的方法,需要在 `application_controller.rb`中 `include PublicActivity::StoreController`
 
 * 自行获取 controller 上下文: 
