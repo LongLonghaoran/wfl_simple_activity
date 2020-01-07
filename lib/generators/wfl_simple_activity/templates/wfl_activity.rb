@@ -10,7 +10,6 @@ module WflActivity
         request_params: proc {|controller, model| controller&.params&.to_h}
       }
     )
-    enum status: [:success, :failed]
 
     # 如果不需要删除记录
     # has_many :activities, as: :trackable, class_name: 'PublicActivity::Activity', dependent: :destroy
