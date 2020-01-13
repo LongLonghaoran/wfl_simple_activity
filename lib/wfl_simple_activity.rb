@@ -6,3 +6,4 @@ module WflSimpleActivity
 end
 
 require 'wfl_simple_activity/common_activity.rb'
+require 'public_activity.rb'
